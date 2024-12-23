@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Қазақстан тоталитарлық жүйенің ңығаюы кезеңінде</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+      :root {
+        --primary-color: #4a90e2;
+        --secondary-color: #2c3e50;
+        --text-color: #333;
+        --background-color: #f5f7fa;
+        --accent-color: #e67e22;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.8;
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        text-align: center;
+        padding: 80px 0;
+        margin-bottom: 60px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        color: var(--secondary-color);
+        border-bottom: 3px solid var(--accent-color);
+        padding-bottom: 10px;
+      }
+
+      .main-content {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 60px;
+        margin-top: -80px;
+        margin-bottom: 60px;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 60px auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: var(--primary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-item {
+        padding: 10px 50px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid var(--accent-color);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .timeline-item:hover::after {
+        transform: scale(1.2);
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .right::after {
+        left: -16px;
+      }
+
+      .timeline-content {
+        padding: 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .quote {
+        font-style: italic;
+        border-left: 6px solid var(--accent-color);
+        padding: 20px;
+        margin: 30px 0;
+        background-color: #f9f9f9;
+        border-radius: 0 10px 10px 0;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+      }
+
+      ul li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+      }
+
+      ul li::before {
+        content: "•";
+        color: var(--accent-color);
+        font-size: 1.5em;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .home-button,
+      .scroll-top-button {
+        position: fixed;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      .home-button:hover,
+      .scroll-top-button:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .home-button {
+        top: 20px;
+      }
+
+      .scroll-top-button {
+        bottom: 20px;
+        display: none;
+      }
+
+      @media screen and (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-item::after {
+          left: 15px;
+        }
+
+        .right {
+          left: 0%;
+        }
+
+        .home-button,
+        .scroll-top-button {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="home-button"
+      onclick="window.location.href='https://tarikhnis.github.io/homepage/index.html'"
+    >
+      Басты бет
+    </button>
+    <button class="scroll-top-button" onclick="scrollToTop()">Жоғары</button>
+
+    <header>
+      <div class="container">
+        <h1>Қазақстан тоталитарлық жүйенің ңығаюы кезеңінде</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="main-content">
+        <h2>Қазақстандағы индустрияландыру</h2>
+        <p>
+          Индустрияландыру - ауыл шаруашылығы және өсімдік өндірісі кең дамыған
+          экономикалар мен қоғамдарды негізі өндеуші және осымен байланысты
+          өндірістін өндіру саласы болып табылатын экономикалар мен қоғамдарға
+          айналдыру.
+        </p>
+
+        <h2>Индустрияландырудың себептері</h2>
+        <ul>
+          <li>Техникалық-экономикалық дамудың тежелуі</li>
+          <li>
+            КСРО-ның өндірістік өнеркәсіп саласындағы төмен деңгейдегі дамуы
+          </li>
+          <li>Мемлекет экономикасының өзге елдерге тәуелді болуы</li>
+          <li>
+            Елдің халықаралық деңгейде экономикалық және саяси деңгейдегі
+            оқшаулануы
+          </li>
+        </ul>
+
+        <h2>Индустрияландырудың барысы</h2>
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>1926</h3>
+              <p>КСРО лезде индустриализацияға бағытталды</p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>1927-1931</h3>
+              <p>Түркістан-Сібір темір жолының құрылысы</p>
+            </div>
+          </div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>1928-1932</h3>
+              <p>Бірінші бесжылдық: жаңа кәсіпорындар ашылды</p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>1939-1940</h3>
+              <p>Жаңа темір жол желілерінің салынуы</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Индустрияландырудың жағымды жақтары</h2>
+        <ul>
+          <li>Урбандалу үрдісі қарқынды жүрді</li>
+          <li>Өнеркәсіп экономиканың негізгі күшіне айналды</li>
+          <li>Мамандалған жұмыскерлер саны артты</li>
+          <li>Пайдалы қазбалар/отын қоры ұлғайды</li>
+          <li>Ауыр өнеркәсіптің өндірісі артты</li>
+          <li>120 үлкен өнеркәсіптік кәсіпорын ашылды</li>
+        </ul>
+
+        <h2>Индустрияландырудың жағымсыз жақтары</h2>
+        <ul>
+          <li>
+            Арзан жұмыскерлерге ие болу үшін репрессияға ұшыраған халық
+            лагерьлерде ұсталынды
+          </li>
+          <li>Қазақстанның тек шикізат көзі болуы</li>
+          <li>Қазақтардың үлесі күрт азайды</li>
+        </ul>
+
+        <h2>Ұжымдастыру саясаты</h2>
+        <p>
+          Ұжымдастыру - КСРО-да ұсақ, жеке шаруа қожалықтарын біріктіру арқылы
+          ауыл шаруашылығын мемлекет мүддесіне толық бағындырып, қайта құрудың
+          теориясы мен практикасы. Ол 1929-1932 жылдар аралығында жүргізілді,
+          алайда орталық және солтүстік Азияда 1939-1940 жылдарға дейін болды.
+        </p>
+
+        <h2>Ұжымдастыру саясатының барысы</h2>
+        <p>
+          Ұжымдастыру бай-кулактарды тəркілеуден басталды. 1928 жылғы тамызда
+          "Аса ірі бай шаруашылықтары мен жартылай феодалдарды тəркілеу жəне жер
+          аудару туралы" декрет жарияланды. Бай-феодалдар өздерінің мүліктік
+          жəне қоғамдық ықпалымен ауылды Кеңестендіруге кедергі жасайды деп
+          саналды.
+        </p>
+
+        <p>
+          1929 жылдың екінші жартысынан бастап республикада ұжымшар құрылысы
+          жедел дамыды. Алғашқы МТC (машина-трактор станциялары) құрылды.
+          Ұжымдастыру мен отырықшыландыруды жаппай жүргізу үшін қосымша 8 мың
+          жұмысшы "ұжымдастырушылар" тартылды.
+        </p>
+
+        <h2>Ұжымдастырудың салдары</h2>
+        <p>
+          Ұжымдастыру саясаты "ұлы нәубетке" әкеліп соқтырды. Астық пен ет
+          дайындау мәжбүрлеу, жазалау және үрей туғызу арқылы жүргізілді.
+          Халықта небәрі бірнеше жылдың ішінде мал басы күрт азайды.
+        </p>
+
+        <div class="quote">
+          <p>
+            "Менің бауырымның, яғни 12 жыл жалшы болған кісінің бір ғана сиыры
+            болды. Егіншілікпен ешқашанда айналыспаған. Соған қарамастан оған
+            1930 жылы 5 пүт астық салығын салып, бұл астықты төлеу үшін соңғы
+            сиырын және үйдегі мүліктерін сатуға мәжбүр болды." - Х.Нұрмұхамедов
+          </p>
+        </div>
+
+        <h3>Ұжымдастырудың негізгі салдарлары:</h3>
+        <ul>
+          <li>
+            Әлеуметтік-демографиялық: 1930-1932 жылдары елді аштық жайлады.
+            Аштықтан, түрлі індеттен халықтың 40%-ы қырылды. 1931-1933 жылдары
+            республикадағы 6,2 млн. тұрғынның 2,1 млн-
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
